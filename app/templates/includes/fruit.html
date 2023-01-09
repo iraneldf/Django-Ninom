@@ -1,0 +1,38 @@
+<!-- fruit section -->
+
+ <section class="fruit_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <hr>
+                <h2>
+                    {{ titleFruit }}
+                </h2>
+            </div>
+        </div>
+        <div class="container-fluid">
+
+            <div class="fruit_container">
+                {% for fruit in fruits %}
+                    {% if fruit.activ %}
+                    <div class="box card">
+                        <img src="{{ fruit.imagen.url }}" alt="" class="cover" style="size: ">
+
+                        <div class="link_box">
+                            <h5>
+                                {{ fruit.nombre }}
+                            </h5>
+                            <a href="{% url 'contact' %}">
+                                {{ shop.boton }}
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+        </div>
+        </div>
+    </section>
+
+<!-- end fruit section -->

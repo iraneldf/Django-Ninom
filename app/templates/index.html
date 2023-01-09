@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block header %}
+
+    {% include 'includes/header_index.html' %}
+
+
+{% endblock %}
+
+{% block content %}
+
+    <!-- shop section -->
+    <section class="shop_section layout_padding">
+        <div class="container">
+            <div class="box">
+                <div class="detail-box">
+                    <h2>
+                        {{ shop.titulo }}
+                    </h2>
+                    <p>
+                        {{ shop.descripcion }}
+                    </p>
+                </div>
+                <div class="img-box">
+                    <img src="{{ shop.imagen.url }}" alt="">
+                </div>
+                <div class="btn-box">
+                    <a href="{% url 'contact' %}">
+                        {{ shop.boton }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end shop section -->
+
+    <!-- about section -->
+    {% include 'includes/about.html' %}
+    <!-- end about section -->
+
+    <!-- fruit section -->
+    {% include 'includes/fruit.html' %}
+    <!-- end fruit section -->
+
+    <!-- client section -->
+    {% include 'includes/testimonial.html' %}
+    <!-- end client section -->
+
+    <!-- contact section -->
+    {% include 'includes/contact.html' %}
+    <!-- end contact section -->
+
+{% endblock %}
+
+
+
+

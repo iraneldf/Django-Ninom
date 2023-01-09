@@ -1,0 +1,140 @@
+{% load static %}
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Site Metas -->
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>{% block title %} {% endblock %}</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+          rel="stylesheet"/>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <!-- responsive style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}"/>
+
+</head>
+
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+<!-- info section -->
+
+<section class="info_section layout_padding">
+    <div class="container">
+        <div class="info_logo">
+            <h2>
+                {{ nombre }}
+            </h2>
+        </div>
+        <div class="info_contact">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="{{ info.ubicacion_en }}">
+                        <img src="{% static 'images/location.png' %}" alt="">
+                        <span>
+                {{ info.ubicacion }}
+              </span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href=" {{ info.telef_en }}">
+                        <img src="{% static 'images/call.png' %}" alt="">
+                        <span>
+                {{ info.telef }}
+              </span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="{{ info.email_en }}">
+                        <img src="{% static 'images/mail.png' %}" alt="">
+                        <span>
+                {{ info.email }}
+              </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-lg-9">
+                <div class="info_form">
+                    <form action="{% url 'subscribe' %}" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="email" class="input" placeholder="Enter your email">
+
+                        <input type="submit" value="subscribe" class="boton btn">
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-lg-9">
+                    <!--     ///     -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="info_social">
+                            {% if info.facebookAct %}
+                                <div>
+                                    <a href="{{ info.facebook }}">
+                                        <img src="{% static 'images/facebook-logo-button.png' %}" alt="">
+                                    </a>
+                                </div>
+                            {% endif %}
+                            {% if info.twitterAct %}
+                                <div>
+                                    <a href="{{ info.twitter }}">
+                                        <img src="{% static 'images/twitter-logo-button.png' %}" alt="">
+                                    </a>
+                                </div>
+                            {% endif %}
+                            {% if info.linkedinAct %}
+                                <div>
+                                    <a href="{{ info.linkedin }}">
+                                        <img src="{% static 'images/linkedin.png' %}" alt="">
+                                    </a>
+                                </div>
+                            {% endif %}
+                            {% if info.instagramAct %}
+                                <div>
+                                    <a href="{{ info.instagram }}">
+                                        <img src="{% static 'images/instagram.png' %}" alt="">
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+</section>
+
+<!-- end info section -->
+
+<!-- footer section -->
+<section class="container-fluid footer_section ">
+    <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved. Design by
+        <a href="https://html.design/">Free Html Templates</a>. Developed by GoDjango
+    </p>
+</section>
+<!-- footer section -->
+<script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+</body>
