@@ -3,5 +3,5 @@ Recordar rellenar los siguentes campos al final de  'Ninom\settings.py' para el 
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
-#Versión en español
+#Versión en inglés
 # Ninom
