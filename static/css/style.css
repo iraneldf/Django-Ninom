@@ -55,7 +55,7 @@ body {
 }
 
 .brand_box .navbar-brand span {
-    font-size: 34px;
+    font-size: 5vw;
     font-weight: bold;
     color: #ffffff;
     text-transform: uppercase;
@@ -732,7 +732,7 @@ a:focus {
 }
 
 .Scroll {
-    height: 600px;
+    height: 100%;
     overflow-y: scroll;
     overflow: auto
 
